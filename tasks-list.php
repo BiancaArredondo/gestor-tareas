@@ -13,6 +13,7 @@
     $json[] = array(
       'name' => $row['name'],
       'description' => $row['description'],
+      'ingreso' => $row['fechaIngreso'],
       'id' => $row['id']
     );
   }

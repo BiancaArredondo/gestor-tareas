@@ -40,6 +40,7 @@ $(document).ready(function() {
     const postData = {
       name: $('#name').val(),
       description: $('#description').val(),
+      ingreso: $('#ingreso').val(),
       id: $('#taskId').val()
     };
     console.log(name);
@@ -51,6 +52,9 @@ $(document).ready(function() {
       fetchTasks();
     });
   });
+
+  
+
 
   // Fetching Tasks
   function fetchTasks() {
@@ -70,6 +74,7 @@ $(document).ready(function() {
                   </a>
                   </td>
                   <td>${task.description}</td>
+                  <td>${task.ingreso}</td>
                   <td>
                     <button class="task-delete btn btn-danger">
                      Delete 
@@ -92,6 +97,7 @@ $(document).ready(function() {
       const task = JSON.parse(response);
       $('#name').val(task.name);
       $('#description').val(task.description);
+      $('#ingreso').val(task.ingreso);
       $('#taskId').val(task.id);
       edit = true;
     });

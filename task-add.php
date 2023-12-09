@@ -6,7 +6,8 @@ if(isset($_POST['name'])) {
   # echo $_POST['name'] . ', ' . $_POST['description'];
   $task_name = $_POST['name'];
   $task_description = $_POST['description'];
-  $query = "INSERT into task(name, description) VALUES ('$task_name', '$task_description')";
+  $task_ingreso = $_POST['ingreso'];
+  $query = "INSERT into task(name, description, fechaIngreso) VALUES ('$task_name', '$task_description', '$task_ingreso')";
   $result = mysqli_query($connection, $query);
 
   if (!$result) {
