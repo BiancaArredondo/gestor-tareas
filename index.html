@@ -30,18 +30,25 @@
           <div class="card">
             <div class="card-body">
               <!-- FORM TO ADD TASKS -->
-              <form id="task-form">
+              <form [formGroup]="form" id="task-form">
                 <div class="form-group">
                   <label for="titulo">Titulo<small></small></label>
-                  <input type="text" id="name" placeholder="" class="form-control">
+                  <input type="text" id="name" placeholder="" class="form-control" required>
                 </div>
                 <div class="form-group">
                   <label for="descripcion">Descripción<small></small></label>
-                  <textarea id="description" cols="30" rows="10" class="form-control" placeholder=""></textarea>
+                  <textarea id="description" cols="30" rows="10" class="form-control" placeholder="" required></textarea>
                 </div>
+                <div class="col_one_third col_last c-azul">
+                  <label for="nacimiento">Fecha de Ingreso</label>
+                  <br>
+                  <input type="date" id="nacimiento" cols="30" rows="10" name="nacimiento"  class="sm-form-control">
+                 </div>
+                 <div class="form-group">
+                 </div>
                 <input type="hidden" id="taskId">
                 <div class="d-grid col-5 mx-auto">
-                   <button type="submit" class="btn btn-primary text-center">
+                   <button type="submit" class="btn btn-primary text-center" >
                   Guardar
                     </button>
                 </div>

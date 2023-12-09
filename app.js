@@ -7,6 +7,8 @@ $(document).ready(function() {
   fetchTasks();
   $('#task-result').hide();
 
+ 
+
 
   // search key type event
   $('#search').keyup(function() {
@@ -40,7 +42,7 @@ $(document).ready(function() {
       description: $('#description').val(),
       id: $('#taskId').val()
     };
-   
+    console.log(name);
     const url = edit === false ? 'task-add.php' : 'task-edit.php';
     console.log(postData, url);
     $.post(url, postData, (response) => {
@@ -80,6 +82,7 @@ $(document).ready(function() {
       }
     });
   }
+ 
 
   // Get a Single Task by Id 
   $(document).on('click', '.task-item', (e) => {
@@ -97,7 +100,7 @@ $(document).ready(function() {
 
   // Delete a Single Task
   $(document).on('click', '.task-delete', (e) => {
-    if(confirm('Are you sure you want to delete it?')) {
+    if(confirm('Estas seguro de borrar el registro?')) {
       const element = $(this)[0].activeElement.parentElement.parentElement;
       const id = $(element).attr('taskId');
       $.post('task-delete.php', {id}, (response) => {
