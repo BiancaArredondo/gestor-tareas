@@ -40,6 +40,7 @@ $(document).ready(function() {
       description: $('#description').val(),
       id: $('#taskId').val()
     };
+   
     const url = edit === false ? 'task-add.php' : 'task-edit.php';
     console.log(postData, url);
     $.post(url, postData, (response) => {
